@@ -45,20 +45,23 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <>
       <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-        <Card className="w-70 h-auto hover:shadow-xl transition-all duration-300 border-none rounded-xl p-0 overflow-hidden relative">
+        <Card className="w-60 h-auto hover:shadow-xl transition-all duration-300 border-none rounded-xl p-0 overflow-hidden relative">
           {/* Card Header (Image Section) */}
           <CardContent className="p-0 relative">
-            <div className="relative w-full h-70 overflow-hidden">
+            <div className="relative w-full h-60 overflow-hidden">
               <Image
                 src={product.images[0]?.url || DEFAULT_IMAGE}
                 alt={product.title}
                 width={400}
                 height={300}
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.03]"
-                priority
+                priority={false}
+                unoptimized={true}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = DEFAULT_IMAGE;
+                  if (target.src !== DEFAULT_IMAGE) {
+                    target.src = DEFAULT_IMAGE;
+                  }
                 }}
               />
             </div>

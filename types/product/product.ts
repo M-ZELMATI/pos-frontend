@@ -38,10 +38,10 @@ interface ProductImage {
 
   // Type the product variable
   export const productExample: Product = {
-    title: 'Caffe Latte',
+    title: 'Caffe Latte Caffe Latte Caffe Latte Caffe Latte Caffe Latte Caffe Latte Caffe Latte Caffe Latte',
     basePrice: 4.0,
     currency: 'USD',
-    description: 'Rich espresso with steamed milk',
+    description: 'Rich espresso with steamed milk, Rich espresso with steamed milk, Rich espresso with steamed milk, Rich espresso with steamed milk, Rich espresso with steamed milk, Rich espresso with steamed milk',
     images: [
       {
         id: 1,
